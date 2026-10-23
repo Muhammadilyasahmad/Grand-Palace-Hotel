@@ -1,0 +1,6 @@
+{
+  "name": "Grand Palace Hotel Multan",
+  "description": "Premium one-page hotel website for Grand Palace Hotel & Restaurant, Multan, Pakistan, featuring rooms, facilities, gallery, and direct WhatsApp booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
