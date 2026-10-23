@@ -120,17 +120,35 @@ export const Footer: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 text-xs">
-              <Phone className="w-4 h-4 text-[#C59A3F] shrink-0" />
-              <a
-                href={`tel:${HOTEL_CONFIG.verifiedPhone.replace(/\s+/g, '')}`}
-                className="text-white hover:text-[#D8AF55] transition-colors font-medium"
-              >
-                {HOTEL_CONFIG.verifiedPhone}
-              </a>
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2.5 text-xs">
+                <Phone className="w-4 h-4 text-[#C59A3F] shrink-0" />
+                <a
+                  href="tel:+923001113686"
+                  className="text-white hover:text-[#D8AF55] transition-colors font-medium"
+                >
+                  +92 300 1113686 <span className="text-[11px] text-slate-400">(Front Desk / WhatsApp)</span>
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs pl-6.5">
+                <a
+                  href="tel:+923067777363"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  +92 306 7777363 <span className="text-[11px] text-slate-400">(Hotline)</span>
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs pl-6.5">
+                <a
+                  href="tel:+923128121514"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  +92 312 8121514 <span className="text-[11px] text-slate-400">(Banquet &amp; Manager)</span>
+                </a>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3 text-xs">
+            <div className="flex items-center gap-3 text-xs pt-1">
               <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
               <a
                 href={whatsAppUrl}
@@ -138,7 +156,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-[#D8AF55] transition-colors font-medium"
               >
-                WhatsApp: {HOTEL_CONFIG.whatsappDisplay}
+                WhatsApp: +92 300 1113686
               </a>
             </div>
 
@@ -158,17 +176,17 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <p>
             &copy; {new Date().getFullYear()} {HOTEL_CONFIG.name}, Multan. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
-            <span className="text-slate-400">Railway Road, Multan, Punjab, Pakistan</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
+            <span className="text-slate-400">Railway Road, Multan, Pakistan</span>
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors p-1"
+              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors p-1 cursor-pointer"
               aria-label="Back to top of page"
             >
               <span>Back to top</span>

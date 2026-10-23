@@ -32,33 +32,35 @@ export const Rooms: React.FC<RoomsProps> = ({ onSelectRoomForBooking }) => {
           </p>
         </div>
 
-        {/* Category Filter Buttons (Functional filter buttons per frontend-design) */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 p-1.5 bg-slate-100 rounded-xl max-w-fit">
-          <button
-            type="button"
-            onClick={() => setSelectedCategory('all')}
-            className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all whitespace-nowrap ${
-              selectedCategory === 'all'
-                ? 'bg-white text-[#0B1528] shadow-sm font-semibold'
-                : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            All Categories ({ROOMS_DATA.length})
-          </button>
-          {ROOMS_DATA.map((r) => (
+        {/* Category Filter Buttons (Smooth horizontal swipe on mobile, wrap on tablet/desktop) */}
+        <div className="w-full overflow-hidden mb-8 sm:mb-10">
+          <div className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-xl max-w-full overflow-x-auto no-scrollbar scroll-smooth">
             <button
-              key={r.id}
               type="button"
-              onClick={() => setSelectedCategory(r.id)}
-              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all whitespace-nowrap ${
-                selectedCategory === r.id
+              onClick={() => setSelectedCategory('all')}
+              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all shrink-0 whitespace-nowrap cursor-pointer ${
+                selectedCategory === 'all'
                   ? 'bg-white text-[#0B1528] shadow-sm font-semibold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              {r.name.replace(' Room', '')}
+              All Categories ({ROOMS_DATA.length})
             </button>
-          ))}
+            {ROOMS_DATA.map((r) => (
+              <button
+                key={r.id}
+                type="button"
+                onClick={() => setSelectedCategory(r.id)}
+                className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all shrink-0 whitespace-nowrap cursor-pointer ${
+                  selectedCategory === r.id
+                    ? 'bg-white text-[#0B1528] shadow-sm font-semibold'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                {r.name.replace(' Room', '')}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Room Cards Grid */}
@@ -140,15 +142,15 @@ export const Rooms: React.FC<RoomsProps> = ({ onSelectRoomForBooking }) => {
                       <span className="font-semibold text-slate-800">Inquire via WhatsApp</span>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                       <a
                         href={whatsAppUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] rounded-lg shadow-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+                        className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] rounded-lg shadow-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
                       >
-                        <MessageCircle className="w-4 h-4 fill-white stroke-none" />
-                        <span>Check Availability</span>
+                        <MessageCircle className="w-4 h-4 fill-white stroke-none shrink-0" />
+                        <span className="truncate">Check Availability</span>
                       </a>
                       
                       {onSelectRoomForBooking && (
@@ -158,7 +160,7 @@ export const Rooms: React.FC<RoomsProps> = ({ onSelectRoomForBooking }) => {
                             onSelectRoomForBooking(room.name);
                             document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
                           }}
-                          className="py-2.5 px-3 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors whitespace-nowrap"
+                          className="py-2.5 px-3 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors whitespace-nowrap text-center cursor-pointer"
                         >
                           Fill Form
                         </button>

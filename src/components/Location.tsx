@@ -39,18 +39,18 @@ export const Location: React.FC = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <div className="p-4 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-xs text-slate-700">
+            <div className="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-2 text-xs text-slate-700 min-w-0">
                 <MapPin className="w-4 h-4 text-[#C59A3F] shrink-0" />
-                <span className="font-medium">Railway Road, Multan (Postal Code: {HOTEL_CONFIG.postalCode})</span>
+                <span className="font-medium truncate sm:whitespace-normal">Railway Road, Multan (Postal Code: {HOTEL_CONFIG.postalCode})</span>
               </div>
               <a
                 href={HOTEL_CONFIG.googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#0B1528] hover:bg-[#1E3250] rounded-lg shadow-xs transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#0B1528] hover:bg-[#1E3250] rounded-lg shadow-xs transition-colors shrink-0 whitespace-nowrap"
               >
-                <Navigation className="w-3.5 h-3.5 text-[#C59A3F]" />
+                <Navigation className="w-3.5 h-3.5 text-[#C59A3F] shrink-0" />
                 <span>Get Directions in Google Maps</span>
               </a>
             </div>
@@ -68,7 +68,21 @@ export const Location: React.FC = () => {
               <p className="text-sm text-slate-700 leading-relaxed font-medium mb-3">
                 {HOTEL_CONFIG.address}
               </p>
-              <p className="text-xs text-slate-500">
+              <div className="pt-2 border-t border-slate-200/80 mb-3 space-y-1 text-xs">
+                <p className="text-slate-800 font-semibold">Direct Phone Lines:</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-600">
+                  <a href="tel:+923001113686" className="hover:text-[#0B1528] underline font-medium">
+                    +92 300 1113686 (Front Desk)
+                  </a>
+                  <a href="tel:+923067777363" className="hover:text-[#0B1528] underline">
+                    +92 306 7777363 (Hotline)
+                  </a>
+                  <a href="tel:+923128121514" className="hover:text-[#0B1528] underline">
+                    +92 312 8121514 (Banquet)
+                  </a>
+                </div>
+              </div>
+              <p className="text-[11px] text-slate-500">
                 * Note: Specifically located on Railway Road (Railway Colony, Basti Saddu Hassan). Distinct from other unrelated Grand properties in the city.
               </p>
             </div>

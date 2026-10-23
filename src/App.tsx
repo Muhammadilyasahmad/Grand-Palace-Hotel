@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-slate-800 flex flex-col selection:bg-[#C59A3F]/25 selection:text-[#0B1528]">
+    <div className="min-h-screen bg-[#FAF9F6] text-slate-800 flex flex-col selection:bg-[#C59A3F]/25 selection:text-[#0B1528] overflow-x-hidden w-full">
       {/* Sticky Navigation Header */}
       <Header />
 

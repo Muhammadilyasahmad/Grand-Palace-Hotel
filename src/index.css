@@ -20,13 +20,29 @@
   --color-sand-100: #F4EFEA;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #FAF9F6;
   color: #1E293B;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1, h2, h3, .font-display {
   font-family: var(--font-serif);
+}
+
+/* Utility to hide scrollbars on horizontal filter lists while maintaining touch swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -43,12 +43,12 @@ export const Header: React.FC = () => {
           {/* Zone 1: Brand Wordmark (Single text element wordmark) */}
           <a
             href="#home"
-            className="flex items-center gap-2.5 text-white group whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59A3F] rounded"
+            className="flex items-center gap-2 text-white group whitespace-nowrap shrink-0 min-w-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59A3F] rounded"
           >
-            <span className="w-8 h-8 rounded-md bg-[#C59A3F] flex items-center justify-center text-[#0B1528] font-serif font-bold text-lg shadow-sm">
+            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-[#C59A3F] flex items-center justify-center text-[#0B1528] font-serif font-bold text-sm sm:text-lg shadow-sm shrink-0">
               GP
             </span>
-            <span className="font-serif text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-[#D8AF55] transition-colors">
+            <span className="font-serif text-base sm:text-lg xl:text-xl font-bold tracking-tight text-white group-hover:text-[#D8AF55] transition-colors truncate max-w-[160px] xs:max-w-[220px] sm:max-w-none">
               Grand Palace Hotel
             </span>
           </a>
